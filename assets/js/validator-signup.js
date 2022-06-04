@@ -5,6 +5,7 @@ const passWord = document.querySelector('#password')
 const form = document.querySelector('#form-signup')
 const btn = document.querySelector('.form-signup__submit')
 const email = document.querySelector('#email')
+const listInput = document.querySelectorAll('.input')
 // Hàm hiển thị lỗi
 function showErorr (input, message) {
      let parent = input.parentElement
@@ -58,17 +59,24 @@ function checkLength (input, min, max) {
      showSucces(input)
      return false
 }
+// Hamf foucus 
+function focusInput (listInput) {
+     listInput.forEach( input => {
+          input.addEventListener('focus', e => {
+               showSucces(input)
+          })
+     })
+}
 // Event submit form
 form.addEventListener('submit', e => {
      e.preventDefault()
      console.log(checkInput([ userName, passWord, email]))
-     // checkLength(userName, 3, 10)
-     // checkLength(passWord, 3, 10)
-     // checkInput([ userName, passWord])
-     // checkEmail(email)
      if (checkInput([ userName, passWord, email])) {
           checkLength(userName, 3, 10)
           checkLength(passWord, 3, 10) 
+          focusInput(listInput)
      }
 })
+
+
 

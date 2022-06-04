@@ -4,7 +4,8 @@ const userName = document.querySelector('#name')
 const passWord = document.querySelector('#password')
 const form = document.querySelector('#form-login')
 const btn = document.querySelector('.form-login__submit')
-const email = document.querySelector('#email')
+// const email = document.querySelector('#email')
+const listInput = document.querySelectorAll('.input')
 // Hàm hiển thị lỗi
 function showErorr (input, message) {
      let parent = input.parentElement
@@ -22,6 +23,7 @@ function showSucces (input) {
 // Hàm kiểm tra giá trị của input
 function checkInput (listInput) {
      let isEmptyErorr = true;
+     console.log(listInput)
      listInput.forEach( function (input) {
           input.value = input.value.trim()
           if (!input.value) {
@@ -34,17 +36,17 @@ function checkInput (listInput) {
      return isEmptyErorr
 }
 // Hàm kiểm tra email
-function checkEmail (email) {
-     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g ;
-     email.value = email.value.trim() 
-     let isEmailError = !regex.test(email.value)
-     if (regex.test(email.input)) {
-          showSucces(email)
-     }else {
-          showErorr(email, 'vui long nhap email')
-     }
-     return isEmailError
-}
+// function checkEmail (email) {
+//      const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g ;
+//      email.value = email.value.trim() 
+//      let isEmailError = !regex.test(email.value)
+//      if (regex.test(email.input)) {
+//           showSucces(email)
+//      }else {
+//           showErorr(email, 'vui long nhap email')
+//      }
+//      return isEmailError
+// }
 /// Hàm độ dài tối thiểu và tối đa của các thẻ input
 function checkLength (input, min, max) {
      input.value = input.value.trim()
@@ -58,18 +60,24 @@ function checkLength (input, min, max) {
      showSucces(input)
      return false
 }
+// Hamf foucus 
+function focusInput (listInput) {
+     listInput.forEach( input => {
+          console.log(input)
+          input.addEventListener('focus', e => {
+               showSucces(input)
+          })
+     })
+}
 // Event submit form
 form.addEventListener('submit', e => {
      e.preventDefault()
-     console.log(checkInput([ userName, passWord, email]))
-     // checkLength(userName, 3, 10)
-     // checkLength(passWord, 3, 10)
-     // checkInput([ userName, passWord])
-     // checkEmail(email)
-     if (checkInput([ userName, passWord, email])) {
+     console.log(checkInput([ userName, passWord]))
+     if (!checkInput([ userName, passWord])) {
           checkLength(userName, 3, 10)
           checkLength(passWord, 3, 10) 
      }
+     focusInput(listInput)
 
 })
 
