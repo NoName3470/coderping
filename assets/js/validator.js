@@ -1,10 +1,7 @@
-// const { default: isEmail } = require("validator/lib/isemail")
-
 const userName = document.querySelector('#name')
 const passWord = document.querySelector('#password')
 const form = document.querySelector('#form-login')
 const btn = document.querySelector('.form-login__submit')
-// const email = document.querySelector('#email')
 const listInput = document.querySelectorAll('.input')
 // Hàm hiển thị lỗi
 function showErorr (input, message) {
@@ -35,18 +32,7 @@ function checkInput (listInput) {
      });
      return isEmptyErorr
 }
-// Hàm kiểm tra email
-// function checkEmail (email) {
-//      const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g ;
-//      email.value = email.value.trim() 
-//      let isEmailError = !regex.test(email.value)
-//      if (regex.test(email.input)) {
-//           showSucces(email)
-//      }else {
-//           showErorr(email, 'vui long nhap email')
-//      }
-//      return isEmailError
-// }
+
 /// Hàm độ dài tối thiểu và tối đa của các thẻ input
 function checkLength (input, min, max) {
      input.value = input.value.trim()
