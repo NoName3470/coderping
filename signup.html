@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./asset/css/reset.css">
+     <link rel="stylesheet" href="./asset/css/signup.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+     <title>Document</title>
+</head>
+<body>
+     <div class="main">
+          <div class="form">
+               <div class="form-img">
+                    <img src="./asset/img/sign.png" alt="">
+               </div>
+               <form action="" class="form-signup" id="form-signup" name="form-signup">
+                    <h1 class="form-signup__heading">Đăng nhập</h1>
+                    <div class="form-signup__input">
+                         <label for="name">Tên đăng nhập</label>
+                         <input type="text" class="name" id="name" placeholder="User Name">
+                         <span class="messager__error"></span>
+                    </div>
+                    <div class="form-signup__input">
+                         <label for="email">Email</label>
+                         <input type="email" class="email" id="email" placeholder="Nhập email">
+                         <span class="messager__error"></span>
+                    </div>
+                    <div class="form-signup__input">
+                         <label for="password">Mật khẩu</label>
+                         <input type="password" class="password" id="password" placeholder="Nhập mật khẩu">
+                         <span class="messager__error"></span>
+                    </div>
+                    <div class="form-signup__checkbox">
+                         <input type="checkbox" class="checkbox" id="checkbox">
+                         <label for="checkbox">Nhớ mật khẩu</label>
+                    </div>
+                    <button type="submit" class="form-signup__submit">Đăng Kí</button>
+                    <div class="form-signup__help">
+                         <p class="form-signup__help-para">
+                              Đã có tài khoản tài khoản?
+                              <a href="./login.html" class="form-signup__help-link">Đăng nhập</a>
+                         </p>
+                    </div>
+               </form>
+          </div>
+     </div>   
+
+     <script src="./asset/js/validator-signup.js"></script>
+</body>
+</html>
