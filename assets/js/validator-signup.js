@@ -74,8 +74,8 @@ form.addEventListener('submit', e => {
      if (checkInput([ userName, passWord, email])) {
           checkLength(userName, 3, 10)
           checkLength(passWord, 3, 10) 
-          focusInput(listInput)
      }
+     focusInput(listInput)
 })
 
 

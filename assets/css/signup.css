@@ -19,7 +19,6 @@ input {
      outline: none;
 }
 span {
-     /* padding: 4px 5px; */
      font-size: 1.6rem;
      font-weight: 400;
      color: var(--red-color);
@@ -57,7 +56,7 @@ label {
      font-weight: 700;
      text-align: center;
      color: var(--black-color);
-     margin-bottom: 20px;
+     margin-bottom: 15px;
 }
 .form-signup__input {
      width: 100%;

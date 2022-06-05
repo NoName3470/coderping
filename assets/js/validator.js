@@ -59,7 +59,7 @@ function focusInput (listInput) {
 form.addEventListener('submit', e => {
      e.preventDefault()
      console.log(checkInput([ userName, passWord]))
-     if (!checkInput([ userName, passWord])) {
+     if (checkInput([ userName, passWord])) {
           checkLength(userName, 3, 10)
           checkLength(passWord, 3, 10) 
      }
